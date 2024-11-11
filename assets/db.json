@@ -1,0 +1,71 @@
+{
+  "0": [
+    {
+      "id": 1,
+      "device": "Laptop",
+      "ip": "192.168.1.10",
+      "dataTransferred": 300,
+      "connections": ["192.168.1.11", "192.168.1.12"],
+      "connectionTime": "23:45",
+      "protocol": "TCP",
+      "lastActivity": "00:05",
+      "packetsSent": 150,
+      "packetsReceived": 200,
+      "secureConnection": false
+    },
+    {
+      "id": 2,
+      "device": "Smartphone",
+      "ip": "192.168.1.11",
+      "dataTransferred": 150,
+      "connections": ["192.168.1.10"],
+      "connectionTime": "22:15",
+      "protocol": "UDP",
+      "lastActivity": "22:30",
+      "packetsSent": 60,
+      "packetsReceived": 100,
+      "secureConnection": true
+    },
+    {
+      "id": 3,
+      "device": "Smart TV",
+      "ip": "192.168.1.12",
+      "dataTransferred": 500,
+      "connections": ["192.168.1.10"],
+      "connectionTime": "01:20",
+      "protocol": "TCP",
+      "lastActivity": "02:00",
+      "packetsSent": 300,
+      "packetsReceived": 400,
+      "secureConnection": false
+    }
+  ],
+  "1": [
+    {
+      "id": 1,
+      "device": "PC",
+      "ip": "192.168.1.20",
+      "dataTransferred": 600,
+      "connections": ["192.168.1.21"],
+      "connectionTime": "03:00",
+      "protocol": "TCP",
+      "lastActivity": "03:30",
+      "packetsSent": 500,
+      "packetsReceived": 600,
+      "secureConnection": true
+    },
+    {
+      "id": 2,
+      "device": "Smartphone",
+      "ip": "192.168.1.21",
+      "dataTransferred": 200,
+      "connections": ["192.168.1.20"],
+      "connectionTime": "03:10",
+      "protocol": "HTTP",
+      "lastActivity": "03:15",
+      "packetsSent": 50,
+      "packetsReceived": 75,
+      "secureConnection": false
+    }
+  ]
+}
