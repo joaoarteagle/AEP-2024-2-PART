@@ -68,7 +68,8 @@ flutter:
   assets:
     - assets/labels.txt
     - assets/db.json
-    - assets/model.tflite  # Mantenha essa linha apenas se o arquivo existir
+    - assets/model.tflite
+    - assets/logo.png 
 
 
 

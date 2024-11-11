@@ -17,6 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
   List<String> _alerts = [];
   List<String> _recommendations = [];
 
+  // Controladores para os campos de texto
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -58,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Monitoramento de Rede - ${widget.networkId}'),
+        title: Text('Data Defender - ${widget.networkId}'),
         backgroundColor: Colors.blueGrey[800],
       ),
       body: SingleChildScrollView(
@@ -67,6 +71,91 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: Column(
+                  children: [
+                    // Espaço para a logo
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Image.asset(
+                        'assets/logo.png', // Coloque o caminho da sua imagem aqui
+                        height: 100,
+                        width: 100,
+                      ),
+                    ),
+                    Text(
+                      "Data Defender",
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Proteja sua rede com Data Defender!",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Campos de E-mail e Senha
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: [
+                    TextField(
+                      controller: _emailController,
+                      decoration: InputDecoration(
+                        labelText: "E-mail",
+                        labelStyle: TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.grey[800],
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    const SizedBox(height: 16),
+                    TextField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: "Senha",
+                        labelStyle: TextStyle(color: Colors.grey),
+                        filled: true,
+                        fillColor: Colors.grey[800],
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Lógica para login pode ser implementada aqui
+                      },
+                      child: Text("Entrar"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors
+                            .blueAccent, // Corrigido de 'primary' para 'backgroundColor'
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                        textStyle: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
               _buildDeviceList(),
               const SizedBox(height: 20),
               _buildSectionHeader(
